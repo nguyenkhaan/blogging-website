@@ -10,6 +10,9 @@ import { GetPlatformProxyOptions } from 'wrangler'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Post } from './collections/Posts'
+import { Category } from './collections/Category'
+import { Author } from './collections/Author'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -84,7 +87,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media , Post , Category , Author],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
