@@ -212,6 +212,7 @@ export interface Author {
   id: number;
   name: string;
   avatar?: (number | null) | Media;
+  themeColor: string;
   contacts: {
     contactPlatform?: ('facebook' | 'gmail' | 'youtube') | null;
     url: string;
@@ -374,6 +375,7 @@ export interface CategorySelect<T extends boolean = true> {
 export interface AuthorSelect<T extends boolean = true> {
   name?: T;
   avatar?: T;
+  themeColor?: T;
   contacts?:
     | T
     | {

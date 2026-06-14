@@ -8,9 +8,9 @@ import { fileURLToPath } from 'url'
 import { CloudflareContext, getCloudflareContext } from '@opennextjs/cloudflare'
 import { GetPlatformProxyOptions } from 'wrangler'
 
-import { Users } from './collections/Users'
+import { Users } from './collections/User'
 import { Media } from './collections/Media'
-import { Post } from './collections/Posts'
+import { Post } from './collections/Post'
 import { Category } from './collections/Category'
 import { Author } from './collections/Author'
 

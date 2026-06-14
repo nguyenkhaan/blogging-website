@@ -1,4 +1,6 @@
 import { CollectionConfig } from 'payload'
+import { testingHook } from './hooks/creatingHook'
+
 const socialPlatformSelection = [
     {
         value: 'facebook', 
@@ -16,7 +18,9 @@ const socialPlatformSelection = [
 export const Author: CollectionConfig = {
     slug: 'author',
     admin: {},
+    timestamps: true, 
     fields: [
+
         {
             name: 'name',
             label: 'Name',
@@ -28,6 +32,17 @@ export const Author: CollectionConfig = {
             type: 'upload',
             relationTo: 'media',
         },
+        {
+            name: 'themeColor', 
+            label: 'Profile Color', 
+            type: 'text', 
+            required: true, 
+            admin: {
+                components: {
+                    Field: 'src/collections/Author/components/ColorPicker.tsx'
+                }
+            }
+        }, 
         {
             name: 'contacts', 
             label: 'Contact Information', 
@@ -49,4 +64,10 @@ export const Author: CollectionConfig = {
             ]
         }
     ],
+    hooks: {
+        beforeChange: [testingHook], 
+        afterRead : [], 
+        beforeDelete: [], 
+        afterDelete: [] 
+    }
 }
